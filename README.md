@@ -10,7 +10,9 @@ Firefox customizations I use because the defaults are so bad
 
 ## Setup
 
-- Open your profile folder. You can find this by going to [about:profile](about:profile).
+- Open your profile folder. You can find this by going to [about:profiles][about:profiles].
 - Make a new folder named `chrome`
 - Copy the `userChrome.css` file inside
 - Back at the root of the profile folder, copy the `user.js` file inside.
+
+[about:profiles]: about:profiles
