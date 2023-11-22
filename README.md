@@ -7,6 +7,7 @@ Firefox customizations I use because the defaults are so bad
 - Enables `userChrome.css` (warning: may slow down initial startup)
 - Removes Firefox View
 - Removes the "List all tabs" chevron
+- Disables all Pocket (extension) related functionality
 
 ## Setup
 
