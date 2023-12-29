@@ -10,6 +10,9 @@ def install(profile_dir):
     user_chrome_folder_target_path = os.path.join(profile_dir, "chrome")
     user_chrome_target_path = os.path.join(profile_dir, "userChrome.css")
 
+    # Create chrome directory if it doesn't exist
+    Path(user_chrome_folder_target_path).mkdir(parents=True, exist_ok=True)
+
     # Copy files into profile directory
     shutil.copyfile("user.js", user_js_target_path)
     shutil.copyfile("userChrome.css", user_chrome_target_path)
