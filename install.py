@@ -6,12 +6,13 @@ import shutil
 
 def install(profile_dir):
     # Setup target paths
-    user_js_target_path = f"{profile_dir}/user.js"
-    user_chrome_target_path = f"{profile_dir}/chrome/userChrome.css"
+    user_js_target_path = os.path.join(profile_dir, "user.js")
+    user_chrome_folder_target_path = os.path.join(profile_dir, "chrome")
+    user_chrome_target_path = os.path.join(profile_dir, "userChrome.css")
 
     # Copy files into profile directory
-    shutil.copyfile("./user.js", user_js_target_path)
-    shutil.copyfile("./userChrome.css", user_chrome_target_path)
+    shutil.copyfile("user.js", user_js_target_path)
+    shutil.copyfile("userChrome.css", user_chrome_target_path)
 
 
 def main():
@@ -22,7 +23,8 @@ def main():
         home_dir = str(Path.home())
         base_install_path = f"{home_dir}/Library/Application Support/Firefox/Profiles"
     elif platform == "win32":
-        raise Exception("Not implemented yet!")
+        appdata_roaming_dir = os.getenv('APPDATA')
+        base_install_path = os.path.join(appdata_roaming_dir, "Mozilla\Firefox\Profiles")
 
     # Check for profiles
     profile_dirs = [ f.path for f in os.scandir(base_install_path) if f.is_dir() ]
