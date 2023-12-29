@@ -44,7 +44,7 @@ def main():
         for profile_dir in profile_dirs:
             install(profile_dir)
     else:
-        install(profile_dirs[0])
+        install(profile_dirs[choice])
 
 if __name__=="__main__":
     main()
