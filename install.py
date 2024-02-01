@@ -21,7 +21,8 @@ def install(profile_dir):
 def main():
     # What OS are we in right now?
     if platform == "linux" or platform == "linux2":
-        raise Exception("Not implemented yet!")
+        home_dir = str(Path.home())
+        base_install_path = f"{home_dir}/.mozilla/firefox"
     elif platform == "darwin":
         home_dir = str(Path.home())
         base_install_path = f"{home_dir}/Library/Application Support/Firefox/Profiles"
